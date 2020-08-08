@@ -1,0 +1,39 @@
+\begin{problem}{Библиотека}{stdin}{stdout}{1 sec}{256 Mb}
+
+Вам необходимо написать программу, которая считывает N книжных серий и группирует эти серии по фамилии автора.
+
+\InputFile
+
+Первая строка входного файла содержит целое число N. Следующие N строк описывают N книжных серий. Для каждой серии указан
+ее автор и через пробел название серии.
+
+\OutputFile
+
+Вывод должен содержать 2M строк (M - количество фамилий), после каждой строки с фамилией должна идти строка c перечислением серий
+этого автора через запятую. Фамилии должны быть отсортированы. Названия серий каждого автора тоже должны быть отсортированы.
+\Example
+
+\begin{example}
+\exmp{
+5
+Pratchett JuvenileLiterature
+Tolkien Hobbit
+Rowling HarryPotter
+Tolkien LotR
+Pratchett FlatWorld
+}{
+Pratchett
+FlatWorld, JuvenileLiterature
+Rowling
+HarryPotter
+Tolkien
+Hobbit, LotR
+}%
+\end{example}
+
+\Note
+
+Необходимо создать датакласс книжной серии с двумя полями author и name.
+Для преобразования списка серий в список имен можно использовать joinToString.
+
+\end{problem}

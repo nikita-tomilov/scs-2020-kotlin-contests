@@ -1,0 +1,43 @@
+\begin{problem}{Список персонажей}{stdin}{stdout}{1 sec}{256 Mb}
+
+Вам необходимо написать программу, которая считывает N персонажей и выводит отсортированный список персонажей по фамилии.
+
+\InputFile
+
+Первая строка входного файла содержит целое число N. Следующие 2N строк описывают фамилию и имя персонажа.
+
+\OutputFile
+
+Вывод должен содержать N строк, в которых указаны имя и фамилия персонажа, список должен быть отсортирован по фамилии.
+\Example
+
+\begin{example}
+\exmp{
+5
+Cucumber
+Beneficial
+Cabbagepatch
+Benedryl
+Overwatch
+Battlefield
+Tennismatch
+Wimbledon
+Cookiebatch
+Bendycat
+}{
+Benedryl Cabbagepatch
+Bendycat Cookiebatch
+Beneficial Cucumber
+Battlefield Overwatch
+Wimbledon Tennismatch
+}%
+\end{example}
+
+\Note
+
+Необходимо создать датакласс персонажа с двумя полями name и surname, 
+считать персонажей в массив и выводить отсортированный по полю surname массив.
+
+Для класса персонажа также можно переопределить метод toString.
+
+\end{problem}
