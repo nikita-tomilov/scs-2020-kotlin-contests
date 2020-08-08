@@ -1,0 +1,19 @@
+sudo apt install texstudio tex-common texlive texlive-lang-cyrillic texlive-science texlive-bibtex-extra  texlive-latex-extra ttf-mscorefonts-installer texlive-metapost
+ 
+Для PSCyr:
+https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/wiki/Installation инструкция
+
+http://blog.harrix.org/article/444 файлы
+
+https://www.linux.org.ru/forum/general/13547178?cid=13550553 тоже инструкция
+
+
+Но если вкратце:
+
+- vim /etc/apt/sources.list
+append "deb [trusted=yes] https://people.debian.org/~sgolovan/debian/ jessie main"
+
+- sudo apt update
+- sudo apt install tex-pscyr
+- sudo chmod -R 777 /usr/local/share/texmf/
+
