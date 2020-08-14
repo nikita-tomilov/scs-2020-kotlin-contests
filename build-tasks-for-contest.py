@@ -7,7 +7,16 @@ from os.path import isfile, join
 from pathlib import Path
 import shutil
 
-if len(sys.argv) != 5:
+def copytree(src, dst, symlinks=False, ignore=None):
+    for item in os.listdir(src):
+        s = os.path.join(src, item)
+        d = os.path.join(dst, item)
+        if os.path.isdir(s):
+            shutil.copytree(s, d, symlinks, ignore)
+        else:
+            shutil.copy2(s, d)
+
+if len(sys.argv) != 6:
     print("rtfm")
     exit(2)
 
@@ -15,6 +24,7 @@ contestId = sys.argv[1]  # "c1"
 source = sys.argv[2]  # "./statements"
 target = sys.argv[3]  # "./compiled-tasks"
 solution = sys.argv[4]  # "./src"
+prebuildTests = sys.argv[5] # "./test/resources"
 
 sourceFolder = source + "/" + contestId
 targetFolder = target + "/" + contestId
@@ -148,6 +158,10 @@ for texfile in texfiles:
     testOutputFile.close()
 
     print("written files " + testInputFilePath + " and " + testOutputFilePath)
+
+    prebuildTestsFolder = prebuildTests + "/" + contestId + "/" + taskPrefix
+    copytree(prebuildTestsFolder, targetFolderForTests)
+    print("tests copied from " + prebuildTestsFolder + " to " + targetFolderForTests)
 
     # BUILDING ARCHIVE
     targetArchivePath = targetFolderForTask
